@@ -22,6 +22,7 @@ type piResult struct {
 
 var piDigits string
 
+// speed in bytes
 var speed = 100000
 
 func main() {
