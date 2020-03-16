@@ -29,7 +29,11 @@ func main() {
 	http.HandleFunc("/search/", SearchServer)
 	fs := http.FileServer(http.Dir("./public"))
 	http.Handle("/", fs)
-	loadFile("pi.txt")
+	var filename = "pi.txt"
+	if len(os.Args[1:]) > 0 {
+		filename = os.Args[1]
+	}
+	loadFile(filename)
 	http.ListenAndServe(":8080", nil)
 }
 
