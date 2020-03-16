@@ -24,7 +24,7 @@ function appendTable(input, json) {
     cell3.innerText = numberWithCommas(json.Surrounding);
   } else {
     cell2.innerText = "Could not find result";
-    cell3.innerText = "No neighbours because no match was found";
+    cell3.innerText = "No neighbors because no match was found";
   }
 }
 
