@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>PI day search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <h2>Find Index</h2>
+      <input id="input" type="text" oninput="update()" />
+    </form>
+    <h2>Results</h2>
+    <table id="output">
+      <tr>
+        <th>Input</th>
+        <th>Index</th>
+        <th>Next 10 Values</th>
+      </tr>
+    </table>
+
+    <input type="button" value="Clear" onclick="clearTable()" />
+
+    <script src="index.js"></script>
+  </body>
+</html>
