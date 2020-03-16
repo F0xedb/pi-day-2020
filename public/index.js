@@ -5,6 +5,10 @@ function Get(theUrl) {
   return JSON.parse(xmlHttp.responseText);
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 // append an entry to the table
 // input is what the user had given as a option
 // json is the returning value from the rest server
@@ -14,10 +18,10 @@ function appendTable(input, json) {
   let cell1 = row.insertCell(0);
   let cell2 = row.insertCell(1);
   let cell3 = row.insertCell(2);
-  cell1.innerText = input;
+  cell1.innerText = numberWithCommas(input);
   if (json.Index > 0) {
-    cell2.innerText = json.Index;
-    cell3.innerText = json.Surrounding;
+    cell2.innerText = numberWithCommas(json.Index);
+    cell3.innerText = numberWithCommas(json.Surrounding);
   } else {
     cell2.innerText = "Could not find result";
     cell3.innerText = "No neighbours because no match was found";
